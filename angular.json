@@ -13,13 +13,7 @@
           "strict": true
         }
       },
-      "budgets": [
-        {
-           "type": "initial",
-           "maximumWarning": "2mb",
-           "maximumError": "5mb"
-        }
-     ],
+
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -54,8 +48,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                "maximumWarning": "4mb",
+                   "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
