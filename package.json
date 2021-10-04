@@ -3,17 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "dev": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.6",
+    "@angular/cli": "~12.2.4",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
+    "@angular/compiler-cli": "~12.2.0",
     "@angular/core": "^12.2.7",
     "@angular/forms": "~12.2.0",
     "@angular/localize": "~12.2.0",
@@ -26,6 +30,7 @@
     "bootstrap": "^4.6.0",
     "chart.js": "^2.9.4",
     "correios-brasil": "^2.2.2",
+    "express": "^4.17.1",
     "jquery": "^3.6.0",
     "ng2-charts": "^2.4.2",
     "ngx-currency": "^2.5.3",
@@ -33,15 +38,15 @@
     "ngx-pagination": "^5.1.1",
     "overlayscrollbars": "^1.13.1",
     "overlayscrollbars-ngx": "^0.2.3",
+    "path": "^0.12.7",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "typescript": "~4.3.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.4",
-    "@angular/cli": "~12.2.4",
-    "@angular/compiler-cli": "~12.2.0",
     "@types/chart.js": "^2.9.34",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
@@ -50,7 +55,10 @@
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.5"
+    "karma-jasmine-html-reporter": "~1.7.0"
+  },
+  "engines": {
+    "node": "14.17.1",
+    "npm": "6.14.13"
   }
 }
