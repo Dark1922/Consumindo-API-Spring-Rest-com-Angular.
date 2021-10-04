@@ -2,7 +2,7 @@ export class AppConstants {
 
   //base do nosso servidor a url padrão
   public static get baseServidor(): string {
-    return 'http://apirestspringakx.herokuapp.com/';
+    return 'apirestspringakx.herokuapp.com/';
   }
 
   //url login
