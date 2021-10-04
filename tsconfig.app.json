@@ -28,7 +28,8 @@
     "builder": "@angular-devkit/build-angular:browser",
     "options": {
        "allowedCommonJsDependencies": [
-          "lodash"
+          "lodash",
+          "chart.js"
        ]
       }
 
