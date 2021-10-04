@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add User</title>
+</head>
+<body>
+  <h3>Relatório de Usuário</h3>
+
+  <form #formValidation="ngForm" > <!--Linha de componentes -->
+
+
+
+  <div class="form-row">
+  <div class="form-group col-md-3  mt-5 ml-2">
+    <label for="dataNascimento">Data Nasc. Início</label>
+    <span *ngIf="dataInicios.invalid"> *</span>
+    <div class="input-group">
+      <input #dataInicios="ngModel" name="dataInicio" type="text" class="form-control" placeholder="dd/mm/yyyy"
+          ngbDatepicker #dataInicio="ngbDatepicker" [(ngModel)] = "useReport.dataInicio"
+          id="dataInicio" required="true">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar apr" (click)="dataInicio.toggle()" type="button">
+          <img src="https://iconarchive.com/download/i103365/paomedia/small-n-flat/calendar.ico"
+          width="25" height="20"/>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group col-md-3  mt-5">
+    <label for="dataNascimento">Data Nasc. Fim</label>
+    <span *ngIf="dataFims.invalid"> *</span>
+    <div class="input-group">
+      <input #dataFims="ngModel" name="dataFim" type="text" class="form-control" placeholder="dd/mm/yyyy"
+          ngbDatepicker #dataFim="ngbDatepicker" [(ngModel)] = "useReport.dataFim"
+          id="dataFim" required="true">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar apr" (click)="dataFim.toggle()" type="button">
+          <img src="https://iconarchive.com/download/i103365/paomedia/small-n-flat/calendar.ico"
+          width="25" height="20"/>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <div class="form-row ">
+    <div class="form-group col-md-6 ">
+      <button type="button" class="btn btn-primary ml-2" (click)="imprimeRelatorio()"
+        data-toggle="modal" data-target="#myModal">
+        Imprimir PDF
+      </button>
+      </div>
+  </div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modalPdf">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe id="pdf" width="100%" height="500" frameborder="0"
+        scrolling="no" allowtransparency="true">
+      </iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+  </form>
+</body>
+</html>

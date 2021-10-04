@@ -1,0 +1,28 @@
+form {
+  padding: 10px;
+}
+
+h3 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.mglf {
+  margin-left: 10px;
+}
+
+
+span {
+  color:red;
+  font-size: 23px;
+}
+
+.apr {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.ps {
+
+  color: green;
+  font-size:16px;
+}

@@ -1,0 +1,178 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+  </head>
+  <body>
+    <h3>Cadastro de Usuário</h3>
+
+    <form #formValidation="ngForm" > <!--Linha de componentes -->
+  <div class="form-row">
+  <div class="form-group col-md-1 offset-md-2">
+  <label for="id">ID</label>
+  <input type="text" [(ngModel)]="usuario.id" name="id" class="form-control" id="id" readonly autocomplete="false"/>
+  </div>
+
+
+
+  <div class="form-group col-md-7 offset-md-0">
+    <label for="nome">Nome</label>
+    <span *ngIf="nomeValidate.invalid"> *</span>
+    <input type="text" #nomeValidate="ngModel" [(ngModel)]="usuario.nome" name="nome" id="nome" class="form-control" required="true" autocomplete="false"/>
+  </div>
+</div>
+
+<div class="form-row">
+<div class="form-group col-md-4 offset-md-2">
+  <label for="login">Login</label>
+  <span *ngIf="loginValidate.invalid"> *</span>
+  <input type="text"  #loginValidate="ngModel" [(ngModel)]="usuario.login" name="login" id="login" class="form-control" required="true" autocomplete="false" min="4" max="12"/>
+</div>
+<div class="form-group col-md-4 ">
+  <label for="email">E-mail</label>
+  <span *ngIf="emailValidate.invalid"> *</span>
+  <input type="email"  #emailValidate="ngModel" [(ngModel)]="usuario.email" name="email" id="email" class="form-control" required="true" autocomplete="false" min="6" max="50" placeholder="example@example.com"/>
+</div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-8 offset-md-2">
+    <label for="password">Password</label>
+    <span *ngIf="passwordValidate.invalid"> *</span>
+    <input type="password"  #passwordValidate="ngModel" [(ngModel)]="usuario.password" name="password" id="password" class="form-control" required="true" autocomplete="false" min="6" max="12"/>
+  </div>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-4 offset-md-2">
+      <label for="profissaoUser">Profissão</label>
+      <span *ngIf="profissaoValidate.invalid"> *</span>
+      <select #profissaoValidate="ngModel" [(ngModel)]="usuario.profissaoUser" id="profissaoUser" name="profissaoUser"
+         class="form-control" required="true" >
+         <option noSelection>Selecione</option>
+        <option value="JAVA">Desenvolvedor Java</option>
+        <option value="PHP">Desenvolvedor Php</option>
+        <option value="FRNTEND">Desenvolvedor FrontEnd</option>
+        <option value="MDC">Médico</option>
+        <option value="STG">Estágiario</option>
+        <option value="ENFMR">Enfermeira</option>
+        <option value="ANLSR">Analista de Requisitos</option>
+        <option value="DNSA">Desenvolvedor Android</option>
+        <option value="ADVG">Advogado</option>
+        <option value="ADMNT">Administrador.</option>
+        <option value="OT">Outro</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-4 ">
+      <label for="cpf">Cpf</label>
+      <span *ngIf="cpfValidate.invalid"> *</span>
+      <input type="text"  #cpfValidate="ngModel" [(ngModel)]="usuario.cpf" name="cpf" id="cpf" class="form-control" required="true" autocomplete="false" min="11" max="11" mask="000.000.000-00" />
+    </div>
+
+
+
+  </div>
+
+
+
+
+    <div class="form-row">
+      <div class="form-group col-md-4 offset-md-2">
+        <label for="cpf">Salário</label>
+        <span *ngIf="salarioValidate.invalid"> *</span>
+        <input   #salarioValidate="ngModel" [(ngModel)]="usuario.salario" name="salario"
+        id="salario" class="form-control" required="true" autocomplete="false"
+        currencyMask [options]="{prefix : 'R$', thousands: '.', decimal : ','}" />
+      </div>
+
+    <div class="form-group col-md-4">
+      <label for="dataNascimento">Data Nasc.</label>
+      <span *ngIf="dataNasc.invalid"> *</span>
+      <div class="input-group">
+        <input #dataNasc="ngModel" name="dataNascimento" type="text" class="form-control" placeholder="dd/mm/yyyy"
+            ngbDatepicker #dataNascimento="ngbDatepicker" [(ngModel)] = "usuario.dataNascimento"
+            id="dataNascimento" required="true">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar apr" (click)="dataNascimento.toggle()" type="button">
+            <img src="https://iconarchive.com/download/i103365/paomedia/small-n-flat/calendar.ico"
+            width="25" height="20"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--
+    <div class="form-row">
+      <div class="form-group col-md-4 offset-md-3">
+        <label for="profissao">Profissão</label>
+        <span *ngIf="profissaoValidate.invalid"> *</span>
+        <select #profissaoValidate="ngModel" [(ngModel)]="usuario.profissao.id" id="profissao" name="profissao"
+         class="form-control" required="true" >
+         <option noSelection >Selecione</option>
+        <option  *ngFor="let p of profissoes | async" [ngValue]="p.id">{{p.descricao}}</option>
+      </select>
+      </div>
+  </div>-->
+
+
+
+    <div class="card text-center col-md-8 offset-md-2">
+      <div class="card-header">Telefone de Contato</div>
+      <div class="card-body pl-1">
+        <div class="form-row">
+          <input type="tel" class="form-control" placeholder="+55 (99) 9 9999-9999"
+           prefix="+55"  mask=" (00) 0 0000-0000" min="11" max="11"
+            [(ngModel)]="telefone.numero" id="numero" name="numero"/>
+            <!--name tem que ser o mesmo que do atributo numero-->
+
+          <button class="btn btn-success mt-2" (click)="addFone()">
+            Adicionar
+          </button>
+          </div>
+      </div>
+    </div>
+
+     <table class="table table-bordered col-md-6 offset-md-2 mt-4">
+       <tbody>
+         <tr *ngFor="let fone of usuario.telefones; let i = index;">
+           <td>{{fone.id}}</td>
+           <td>{{fone.numero}}</td>
+           <td><button class="btn btn-danger" (click)="deletarTelfone(fone.id, i)" >Delete
+
+           </button></td>
+         </tr>
+       </tbody>
+     </table>
+
+    <div class="form-row ">
+
+      <div class="form-group col-md-6 offset-md-2">
+
+        <button type="submit" class="btn btn-success" [disabled]="formValidation.invalid" (click)="salvarUser()">
+          Salvar
+        </button>
+
+
+
+        <button type="button" class="btn btn-primary ml-2" (click)="novo()">
+          Novo
+        </button>
+
+          <!--ml-2 margin-left: 2px massa -->
+        <button type="button" class="btn btn-secondary ml-2" [routerLink]="['/usuarioList']" routerLinkActive="router-link-active">
+          Voltar
+        </button>
+      </div>
+    </div>
+
+    </form>
+
+
+  </body>
+  </html>
+

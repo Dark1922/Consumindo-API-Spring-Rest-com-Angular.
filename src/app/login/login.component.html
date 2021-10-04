@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+
+  <form>
+    <div class="form-group">
+       <h3 style="text-align: center">Login do Sistema</h3>
+    </div>
+
+  <div class="form-group">
+    <label for="login" class="form-label">Login</label>
+    <input  class="form-control" id="login" placeholder="Informe o Login"
+    required name="login" [(ngModel)]="usuario.login" #loginForm="ngModel">
+    <div class="alert alert-danger" *ngIf='loginForm.invalid' >
+      Login deve ser informado.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password" class="form-label">Senha</label>
+    <input type="password" class="form-control" id="password" name="password"
+     placeholder="password" required [(ngModel)]="usuario.password" #senhaForm="ngModel">
+     <div class="alert alert-danger" *ngIf='senhaForm.invalid'>Senha deve ser informada.</div>
+   </div>
+
+
+   <button type="submit" [disabled]="loginForm.invalid || senhaForm.invalid "
+   class="btn btn-primary" (click)="login()">Login</button>
+
+   <button type="button" [disabled]="loginForm.invalid "
+   class="btn btn-primary ml-3 xd" (click)="recuperar()">Recp. Senha</button>
+
+</form>
+</body>
+</html>

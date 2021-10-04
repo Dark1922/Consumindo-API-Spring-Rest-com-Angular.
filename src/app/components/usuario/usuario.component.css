@@ -1,0 +1,19 @@
+form {
+  margin-top:50px;
+}
+
+table {
+  margin-top:3.5rem;
+  border:  1px solid rgb(202, 198, 198);
+  width: 100%;
+}
+
+.buttonafast {
+  margin-left: 5px;
+}
+.modalPdf {
+  min-width: 90%;
+  min-height:  90%;
+  height: 90%;
+}
+

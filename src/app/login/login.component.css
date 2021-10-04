@@ -1,0 +1,14 @@
+form{
+  padding: 10% 30% 10% 30%;
+}
+input[type=submit] {
+  width: 400px;
+}
+button:hover {
+  background-color:rgb(100, 98, 235);
+}
+button[disabled] {
+  background-color:rgb(178, 196, 235);
+}
+
+
