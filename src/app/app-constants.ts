@@ -1,19 +1,11 @@
 export class AppConstants {
 
-  //base do nosso servidor a url padrão
-  public static get baseServidor(): string {
-    return 'apirestspringakx.herokuapp.com/';
+  public static get baseServidor(): string { return "https://api-spring-rest-marcus.herokuapp.com/" }
+
+  public static get baseLogin(): string {return this.baseServidor + "springrestapi/login"}
+
+  public static get baseUrl(): string {return this.baseServidor + "springrestapi/usuario/"}
+
+  public static get getBaseUrlPath() : string {return this.baseServidor + 'springrestapi/'}
+
   }
-
-  //url login
-  public static get baseLogin(): string {
-    return this.baseServidor + 'cursospringrestapi/login';
-  }
-
-  public static get baseUrl(): string {
-    return this.baseServidor + 'cursospringrestapi/usuario/'}
-
-    public static get getBaseUrlPath() : string {return this.baseServidor + 'cursospringrestapi/'}
-
-
-}
