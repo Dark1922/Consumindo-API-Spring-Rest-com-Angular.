@@ -25,6 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 <p align="justify">Sistema de crud com angular com validações , mascaras , ultilizando uma api em deploy , adicionando token ao cabeçalho do usuário que está acessando o sistema para poder liberar as requisições ajax para ele pode cadastrar , deletar ... , recuperação de senha , mascara de cpf e telefone, gráfico de salários dos usuários cadastrados e pesquisa por nome em paginação, delete por paginação, parametros com relatório e relatórios dos usuários cadastrados.</p>
+<hr>
 
 #Clonar repositório
 ```bash
