@@ -5,6 +5,10 @@
 Você pode visualizar o layout do projeto através desse link http://angular12-restfull-crud.netlify.app É necessário esperar alguns segundos para que o banco de dados suba,
 usuario de acesso: login: teste senha: teste .
 
+![angulargif](https://user-images.githubusercontent.com/48605830/135895887-78c6fd15-6324-439f-a91d-9f9ed9596ed2.gif)
+
+
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
