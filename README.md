@@ -40,9 +40,6 @@ ng serve
 ```bash
 localhost://4200
 ```
-npm install
-ng serve 
-localhost://4200.
-```
+
 
 
