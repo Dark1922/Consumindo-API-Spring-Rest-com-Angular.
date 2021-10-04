@@ -18,11 +18,6 @@ export class User {
 
   telefones!: Array<Telefone>;
 
-  cep!: string;
-  logradouro!: string;
-  bairro!: string;
-  localidade!: string;
-  uf!: string;
-  complemento!: string;
+
 
 }

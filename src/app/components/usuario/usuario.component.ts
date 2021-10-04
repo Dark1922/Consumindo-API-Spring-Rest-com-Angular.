@@ -15,9 +15,9 @@ export class UsuarioComponent implements OnInit {
   [
     {
       id: 0 , nome: "", login: "", cpf: "", password: "" ,
-     email: "", cep: '', telefones: [], dataNascimento: '',
+     email: "",  telefones: [], dataNascimento: '',
       profissao:  new Profissao(), salario: {}, profissaoUser: '',
-     bairro: '', complemento: '', localidade: '',logradouro: '', uf: ''
+
      },
 ];
   //variavel nome do tipo string
